@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Aggregator {
 
-	private User user = new User();
+	private User userDetails = new User();
 	private List<Order> orders = new ArrayList<>();
 	private String host;
 
-	public User getUser() {
-		return user;
+	public User getUserDetails() {
+		return userDetails;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserDetails(User userDetails) {
+		this.userDetails = userDetails;
 	}
 
 	public List<Order> getOrders() {
@@ -35,6 +35,6 @@ public class Aggregator {
 
 	@Override
 	public String toString() {
-		return "Aggregator [user=" + user + ", orders=" + orders + ", host=" + host + "]";
+		return "Aggregator [userDetails=" + userDetails + ", orders=" + orders + ", host=" + host + "]";
 	}
 }

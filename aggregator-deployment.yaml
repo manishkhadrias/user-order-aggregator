@@ -6,7 +6,7 @@ metadata:
   name: user-order-aggregator-api
   namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: user-order-aggregator-api
@@ -22,6 +22,7 @@ spec:
     spec:
       containers:
       - image: manishkhadria/user-order-aggregator-api:0.0.1-SNAPSHOT
+#        imagePullPolicy: Always
         imagePullPolicy: IfNotPresent
         name: user-order-aggregator-api
         env:

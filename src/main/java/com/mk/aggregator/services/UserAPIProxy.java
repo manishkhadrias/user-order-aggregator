@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.mk.aggregator.entities.User;
 
-@FeignClient(name = "user-api", url = "${USER_API_URI:http://localhost:8100}") //
+@FeignClient(name = "user-api", url = "${USER_API_URI:http://localhost}:8100") //
 //@FeignClient(name = "user-api")//Kubernetes Service Name
 public interface UserAPIProxy {
 	@GetMapping("/users/{id}")
