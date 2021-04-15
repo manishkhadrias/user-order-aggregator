@@ -3,18 +3,23 @@ package com.mk.aggregator.entities;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class OrderBean {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class Order {
+
+	@JsonProperty("id")
 	private Integer orderId;
 	BigDecimal orderAmount;
 	Date orderDate;
 	Integer userId;
 	String host;
 
+	@JsonProperty("id")
 	public Integer getOrderId() {
 		return orderId;
 	}
 
+	@JsonProperty("id")
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
 	}

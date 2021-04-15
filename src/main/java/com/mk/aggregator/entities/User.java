@@ -1,6 +1,6 @@
 package com.mk.aggregator.entities;
 
-public class UserBean {
+public class User {
 
 	private Integer id;
 	String name;

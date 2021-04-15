@@ -28,7 +28,7 @@ spec:
           - name: ORDER_API_URI
             value: http://order-api
           - name: USER_API_URI
-            value: http://user-ap1
+            value: http://user-api
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
 ---
