@@ -35,8 +35,8 @@ public class AggregatorServiceImpl implements AggregatorService {
 		LOGGER.info("Received Request to findByUserId HOST_NAME {}. ", hostName);
 		Aggregator aggregator = new Aggregator();
 		aggregator.setHost(hostName);
-		aggregator.setOrderBean(orderAPIProxy.findByUserId(userId).getBody());
-		aggregator.setUserBean(userAPIProxy.findById(userId).getBody());
+		aggregator.setOrders(orderAPIProxy.findByUserId(userId).getBody());
+		aggregator.setUser(userAPIProxy.findById(userId).getBody());
 		return aggregator;
 	}
 

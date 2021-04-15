@@ -5,26 +5,24 @@ import java.util.List;
 
 public class Aggregator {
 
-	User user = new User();
+	private User user = new User();
+	private List<Order> orders = new ArrayList<>();
+	private String host;
 
-	List<Order> order = new ArrayList<>();
-
-	String host;
-
-	public User getUserBean() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUserBean(User user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
-	public List<Order> getOrderBean() {
-		return order;
+	public List<Order> getOrders() {
+		return orders;
 	}
 
-	public void setOrderBean(List<Order> order) {
-		this.order = order;
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 	public String getHost() {
@@ -37,7 +35,6 @@ public class Aggregator {
 
 	@Override
 	public String toString() {
-		return "Aggregator [userBean=" + user + ", orderBean=" + order + ", host=" + host + "]";
+		return "Aggregator [user=" + user + ", orders=" + orders + ", host=" + host + "]";
 	}
-
 }

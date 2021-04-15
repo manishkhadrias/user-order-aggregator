@@ -3,25 +3,20 @@ package com.mk.aggregator.entities;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Order {
 
-	@JsonProperty("id")
-	private Integer orderId;
-	BigDecimal orderAmount;
-	Date orderDate;
-	Integer userId;
-	String host;
+	private Integer id;
+	private BigDecimal orderAmount;
+	private Date orderDate;
+	private Integer userId;
+	private String host;
 
-	@JsonProperty("id")
-	public Integer getOrderId() {
-		return orderId;
+	public Integer getId() {
+		return id;
 	}
 
-	@JsonProperty("id")
-	public void setOrderId(Integer orderId) {
-		this.orderId = orderId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public BigDecimal getOrderAmount() {
@@ -58,8 +53,8 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [orderId=" + orderId + ", orderAmount=" + orderAmount + ", orderDate=" + orderDate + ", userId="
-				+ userId + ", host=" + host + "]";
+		return "Order [id=" + id + ", orderAmount=" + orderAmount + ", orderDate=" + orderDate + ", userId=" + userId
+				+ ", host=" + host + "]";
 	}
-
+	
 }
