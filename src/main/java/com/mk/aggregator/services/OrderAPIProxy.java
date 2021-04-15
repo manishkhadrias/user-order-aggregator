@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.mk.aggregator.entities.Order;
 
-@FeignClient(name = "order-api", url = "${ORDER_API_URI:http://localhost}:8000")//
+@FeignClient(name = "order-api", url = "${ORDER_API_URI:http://localhost}:8000") //
 //@FeignClient(name = "order-api")//Kubernetes Service Name
 public interface OrderAPIProxy {
 	@GetMapping("/orders/{userId}")

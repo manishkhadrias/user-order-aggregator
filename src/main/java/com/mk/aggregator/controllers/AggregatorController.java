@@ -27,7 +27,7 @@ public class AggregatorController {
 		return "{healthy:true}";
 	}
 
-	@GetMapping({"/aggregators/{userId}","/orderdetails/{userId}"})
+	@GetMapping({ "/aggregators/{userId}", "/orderdetails/{userId}" })
 	public ResponseEntity<Aggregator> findByUserId(@PathVariable Integer userId) {
 		try {
 			Aggregator aggregator = aggregatorService.findByUserId(userId);

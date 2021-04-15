@@ -56,5 +56,5 @@ public class Order {
 		return "Order [id=" + id + ", orderAmount=" + orderAmount + ", orderDate=" + orderDate + ", userId=" + userId
 				+ ", host=" + host + "]";
 	}
-	
+
 }
