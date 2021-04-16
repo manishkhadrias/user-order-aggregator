@@ -22,8 +22,8 @@ spec:
     spec:
       containers:
       - image: manishkhadria/user-order-aggregator-api:0.0.2-SNAPSHOT
-#        imagePullPolicy: Always
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
+#        imagePullPolicy: IfNotPresent
         name: user-order-aggregator-api
         env:
           - name: ORDER_API_URI
@@ -31,9 +31,14 @@ spec:
           - name: USER_API_URI
             value: http://user-api
           - name: JAEGER_HOSTNAME
-            value: http://jaeger-allinone
+            value: jaeger-agent
+#            value: jaeger-allinone            
           - name: JAEGER_PORT
             value: "6831"
+#          - name: JAEGER_HOSTNAME
+#            valueFrom:
+#              fieldRef:
+#                fieldPath: status.hostIP
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
 ---
