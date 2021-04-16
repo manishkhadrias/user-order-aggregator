@@ -1,71 +1,67 @@
- #Generated using the tool https://8gwifi.org/kube1.jsp
-#Total Number of Services Found 1
-
-#Generating kubernetes YAML file for the Service jaeger-allinone.yml
-#This is Service Configuration Kube definition
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jaeger-allinone
+  name: jaeger-allinone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jaeger-allinone
+  template:
+    metadata:
+      labels:
+        app: jaeger-allinone
+    spec:
+      containers:
+      - image: jaegertracing/all-in-one:1.22
+        imagePullPolicy: "Always"
+        name: jaeger-allinone
+        ports:
+        - containerPort: 5775
+          protocol: UDP
+        - containerPort: 6831
+          protocol: UDP
+        - containerPort: 6832
+          protocol: UDP
+        - containerPort: 5778
+        - containerPort: 16686
+        - containerPort: 14268
+        - containerPort: 9411
+      restartPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: jaeger-allinone
-  namespace: default
   labels:
     app: jaeger-allinone
+  name: jaeger-allinone
 spec:
   ports:
   - name: "5775"
     port: 5775
-    protocol: TCP
+    protocol: UDP
     targetPort: 5775
   - name: "6831"
     port: 6831
-    protocol: TCP
+    protocol: UDP
     targetPort: 6831
   - name: "6832"
     port: 6832
-    protocol: TCP
+    protocol: UDP
     targetPort: 6832
   - name: "5778"
     port: 5778
-    protocol: TCP
     targetPort: 5778
   - name: "16686"
     port: 16686
-    protocol: TCP
     targetPort: 16686
   - name: "14268"
     port: 14268
-    protocol: TCP
     targetPort: 14268
   - name: "9411"
     port: 9411
-    protocol: TCP
     targetPort: 9411
   selector:
     app: jaeger-allinone
-  type: LoadBalancer
-
-#This is Pod Configuration Kube definition
----
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    app: jaeger-allinone
-  namespace: default
-  name: jaeger-allinone
-spec:
-  containers:
-  - image: jaegertracing/all-in-one:1.22
-    name: jaeger-allinone
-    imagePullPolicy: IfNotPresent
-    ports:
-    - containerPort: 5778
-      protocol: TCP
-    - containerPort: 16686
-      protocol: TCP
-    - containerPort: 14268
-      protocol: TCP
-    - containerPort: 9411
-      protocol: TCP
-  terminationGracePeriodSeconds: 0

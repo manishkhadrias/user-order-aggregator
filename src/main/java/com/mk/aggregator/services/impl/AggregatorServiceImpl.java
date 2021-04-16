@@ -36,7 +36,7 @@ public class AggregatorServiceImpl implements AggregatorService {
 		Aggregator aggregator = new Aggregator();
 		aggregator.setHost(hostName);
 		aggregator.setOrders(orderAPIProxy.findByUserId(userId).getBody());
-//		aggregator.setUserDetails(userAPIProxy.findById(userId).getBody());
+		aggregator.setUserDetails(userAPIProxy.findById(userId).getBody());
 		return aggregator;
 	}
 
