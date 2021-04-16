@@ -21,7 +21,7 @@ spec:
         app: user-order-aggregator-api
     spec:
       containers:
-      - image: manishkhadria/user-order-aggregator-api:0.0.1-SNAPSHOT
+      - image: manishkhadria/user-order-aggregator-api:0.0.2-SNAPSHOT
 #        imagePullPolicy: Always
         imagePullPolicy: IfNotPresent
         name: user-order-aggregator-api
@@ -30,6 +30,10 @@ spec:
             value: http://order-api
           - name: USER_API_URI
             value: http://user-api
+          - name: JAEGER_HOSTNAME
+            value: http://jaeger-allinone
+          - name: JAEGER_PORT
+            value: "6831"
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
 ---
